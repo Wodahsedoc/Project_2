@@ -197,26 +197,6 @@ public class OrderLine extends AbstractEntity {
         System.out.println("  " + "-".repeat(68));
     }
 
-
-    public String toFileString() {
-        return getId() + "," + getCreatedDate() + "," + productId + ","
-             + productName + "," + quantity + "," + unitPrice + ","
-             + discountPercent;
-    }
-
-    public static OrderLine fromFileString(String line) {
-        String[] parts = line.split(",");
-        return new OrderLine(
-            parts[0],
-            parts[1],
-            parts[2],
-            parts[3],
-            Integer.parseInt(parts[4]),
-            Double.parseDouble(parts[5]),
-            Double.parseDouble(parts[6])
-        );
-    }
-
     @Override
     public String toString() {
         return "OrderLine[" + getId() + "] " + productName

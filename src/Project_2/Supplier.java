@@ -184,41 +184,6 @@ public class Supplier extends AbstractEntity {
         System.out.println("-".repeat(80));
     }
 
-
-    public String toFileString() {
-
-        String productIdsStr = String.join("|", productIds);
-        return getId() + "," + getCreatedDate() + "," + supplierName + ","
-             + contactPerson + "," + email + "," + phone + ","
-             + address + "," + productIdsStr + "," + isActive;
-    }
-
-    public static Supplier fromFileString(String line) {
-        String[] parts = line.split(",");
-
-
-        List<String> productIds = new ArrayList<>();
-        if (parts[7] != null && !parts[7].isEmpty()) {
-            for (String id : parts[7].split("\\|")) {
-                if (!id.isEmpty()) {
-                    productIds.add(id);
-                }
-            }
-        }
-
-        return new Supplier(
-            parts[0],
-            parts[1],
-            parts[2],
-            parts[3],
-            parts[4],
-            parts[5],
-            parts[6],
-            productIds,
-            Boolean.parseBoolean(parts[8])
-        );
-    }
-
     @Override
     public String toString() {
         return "Supplier[" + getId() + "] " + supplierName

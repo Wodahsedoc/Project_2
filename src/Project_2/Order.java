@@ -348,34 +348,6 @@ public class Order extends AbstractEntity implements Reportable {
         System.out.println("-".repeat(85));
     }
 
-
-    public String toFileString() {
-
-        StringBuilder lineIds = new StringBuilder();
-        for (int i = 0; i < orderLines.size(); i++) {
-            lineIds.append(orderLines.get(i).getId());
-            if (i < orderLines.size() - 1) lineIds.append("|");
-        }
-        return getId() + "," + getCreatedDate() + "," + supplierId + ","
-             + supplierName + "," + createdByUserId + "," + lineIds + ","
-             + status.name() + "," + lastUpdated + "," + notes;
-    }
-
-    public static Order fromFileString(String line, List<OrderLine> resolvedOrderLines) {
-        String[] parts = line.split(",");
-        return new Order(
-            parts[0],
-            parts[1],
-            parts[2],
-            parts[3],
-            parts[4],
-            resolvedOrderLines,
-            OrderStatus.valueOf(parts[6]),
-            parts[7],
-            parts.length > 8 ? parts[8] : ""
-        );
-    }
-
     @Override
     public String toString() {
         return "Order[" + getId() + "] "

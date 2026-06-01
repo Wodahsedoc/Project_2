@@ -135,25 +135,6 @@ public class User extends AbstractEntity {
                 isActive ? "Active" : "Inactive");
     }
 
-
-    public String toFileString() {
-        return getId() + "," + getCreatedDate() + "," + username + ","
-             + password + "," + email + "," + role.name() + "," + isActive;
-    }
-
-    public static User fromFileString(String line) {
-        String[] parts = line.split(",");
-        return new User(
-            parts[0],
-            parts[1],
-            parts[2],
-            parts[3],
-            parts[4],
-            UserRole.valueOf(parts[5]),
-            Boolean.parseBoolean(parts[6])
-        );
-    }
-
     @Override
     public String toString() {
         return "User[" + getId() + "] " + username + " | " + role.getDisplayName();

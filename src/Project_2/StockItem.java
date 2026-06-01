@@ -217,27 +217,6 @@ public class StockItem extends AbstractEntity {
         System.out.println("  Recommended Restock: " + getRestockRecommendation() + " units");
     }
 
-
-    public String toFileString() {
-        return getId() + "," + getCreatedDate() + "," + productId + ","
-             + quantityInStock + "," + minimumThreshold + ","
-             + maximumCapacity + "," + lastRestocked + "," + lastUpdated;
-    }
-
-    public static StockItem fromFileString(String line) {
-        String[] parts = line.split(",");
-        return new StockItem(
-            parts[0],
-            parts[1],
-            parts[2],
-            Integer.parseInt(parts[3]),
-            Integer.parseInt(parts[4]),
-            Integer.parseInt(parts[5]),
-            parts[6],
-            parts[7]
-        );
-    }
-
     @Override
     public String toString() {
         return "StockItem[" + getId() + "] Product: " + productId

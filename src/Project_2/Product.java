@@ -171,27 +171,6 @@ public class Product extends AbstractEntity {
         System.out.println("-".repeat(73));
     }
 
-
-    public String toFileString() {
-        return getId() + "," + getCreatedDate() + "," + name + ","
-             + description + "," + price + "," + category.name()
-             + "," + supplierId + "," + isAvailable;
-    }
-
-    public static Product fromFileString(String line) {
-        String[] parts = line.split(",");
-        return new Product(
-            parts[0],
-            parts[1],
-            parts[2],
-            parts[3],
-            Double.parseDouble(parts[4]),
-            Category.valueOf(parts[5]),
-            parts[6],
-            Boolean.parseBoolean(parts[7])
-        );
-    }
-
     @Override
     public String toString() {
         return "Product[" + getId() + "] " + name + " - " + getFormattedPrice()
