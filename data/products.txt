@@ -1,0 +1,6 @@
+FB24D6E9,30-05-2026 11:22:32,Samsung 55" TV,4K UHD Smart TV,999.99,ELECTRONICS,SUP001,true
+2461202A,30-05-2026 11:22:32,HDMI Cable 2m,High speed HDMI cable,15.99,ELECTRONICS,SUP001,true
+BC602F96,30-05-2026 11:22:32,Basmati Rice 5kg,Premium long grain rice,12.5,FOOD,SUP002,true
+FFBCC2CB,30-05-2026 11:22:32,Olive Oil 1L,Extra virgin olive oil,18.99,FOOD,SUP002,true
+9A1AC833,30-05-2026 11:22:32,Nike T-Shirt,100% cotton casual t-shirt,45.0,CLOTHING,SUP003,true
+AFF29650,30-05-2026 11:22:32,A4 Notebook,200 page ruled notebook,4.99,STATIONERY,SUP003,true
